@@ -2,14 +2,13 @@ package kaoshipingtai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class DidiDemoApplication implements WebMvcConfigurer {
+public class ExamApplication implements WebMvcConfigurer {
 
     public static void main(String[] args) {
-        SpringApplication.run(DidiDemoApplication.class, args);
+        SpringApplication.run(ExamApplication.class, args);
     }
 //    @Override
 //    public void addResourceHandlers(ResourceHandlerRegistry registry) {
