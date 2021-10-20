@@ -1,4 +1,4 @@
-package kaoshipingtai.Controller;
+package kaoshipingtai.controller;
 
 import kaoshipingtai.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
