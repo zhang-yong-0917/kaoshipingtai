@@ -1,2 +1,2 @@
-test/DidiDemoApplicationTests.java
- test.DidiDemoApplicationTests
+test/ExamApplicationTests.java
+ test.ExamApplicationTests

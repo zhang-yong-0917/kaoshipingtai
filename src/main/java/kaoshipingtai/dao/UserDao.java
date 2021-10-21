@@ -23,11 +23,11 @@ public class UserDao implements UserService {
 
         public User findByName(String name) {
             final User user = new User();
-            String sql = "SELECT username FROM user WHERE user_name=?";
+            String sql = "SELECT user_name FROM user WHERE user_name=?";
             jdbcTemplate.query(sql, new Object[]{name}, new RowCallbackHandler() {
                 @Override
                 public void processRow(ResultSet resultSet) throws SQLException {
-                    user.setUsername(resultSet.getString(1));
+                    user.setUsername(resultSet.getString(2));
                 }
             });
             return user;
@@ -40,8 +40,8 @@ public class UserDao implements UserService {
             jdbcTemplate.query(sql, new Object[]{username, password}, new RowCallbackHandler() {
                 @Override
                 public void processRow(ResultSet resultSet) throws SQLException {
-                    user.setUserid(resultSet.getInt(1));
-                    user.setPassword(resultSet.getString(2));
+                    user.setUsername(resultSet.getString(2));
+                    user.setPassword(resultSet.getString(3));
                 }
             });
             return user;
