@@ -1,20 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-
-<div align="center">
-    <form action="/loginn">
-        用户名:<input type="text" name="username" >
-        <br>
-        密码:<input type="password" name="password" >
-        <br>
-        <button type="submit" >登录</button>
-        <a type="button" href="registry.html">注册</a>
-    </form>
+<div class="container">
+    <img src="../static/img/bc.jpg">
+    <div class="panel">
+        <div class="content login">
+            <div class="switch">
+                <span id="login" class="active">Login</span><span>/</span><span id="signup">Sign up</span>
+            </div>
+            <form action="sign up">
+                <div id='email' class="input" placeholder='Email'><input type="text"></div>
+                <div class="input" placeholder='Username'><input type="text"></div>
+                <div class="input" placeholder='Password'><input type="password"></div>
+                <div id='repeat' class="input" placeholder='Repeat'><input type="password"></div>
+                <span>Forget?</span>
+                <button>LOGIN</button>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+    $('#login').click(function(){
+        $('.switch span').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.content').removeClass('signup');
+        $(this).parents('.content').addClass('login');
+
+        $('form button').text('LOGIN');
+    })
+
+    $('#signup').click(function(){
+        $('.switch span').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.content').removeClass('login');
+        $(this).parents('.content').addClass('signup');
+
+        $('form button').text('SIGNUP');
+    })
+
+    $('.input input').on('focus',function(){
+        $(this).parent().addClass('focus');
+    })
+
+    $('.input input').on('blur',function(){
+        if ($(this).val()==='')
+            $(this).parent().removeClass('focus');
+    })
+</script>
 </html>
